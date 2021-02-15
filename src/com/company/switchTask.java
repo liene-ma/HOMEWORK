@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 
-public class main {
+public class switchTask {
 
     public static void main(String[] args) {
         Assignment2_1();
@@ -32,7 +32,6 @@ public class main {
                 break;
             default:
                 System.out.println("Enter day of the week 1 - 7");
-                return;
         }
 
     }
@@ -42,7 +41,7 @@ public class main {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter Your Grade!");
         char grade = input.next().charAt(0);
-        //don't know how to ignore lower/upper case
+
         switch (grade) {
             case 'A':
                 System.out.println("Perfect! You are so clever!");
