@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class arraysLoops {
@@ -81,7 +82,7 @@ public class arraysLoops {
             System.out.println(myArray2[i]);
         }
 
-        int sum = 0;
+        double sum = 0;
         for (int i = 0; i < myArray2.length; i++)
             sum = sum + myArray2[i];
         double average = sum / myArray2.length;
@@ -98,28 +99,56 @@ public class arraysLoops {
     }
 
     static void nr3() {
-        /*Write a program to do multiple actions with a grade array:
-        ● Create a byte array with length 10. The grades will be stored in the array.
-        ● Use the Scanner class that allows the user to fill the array with user input data from the console.
-        a. Do verification of the type of each input value. Input values should be as numbers.
-        The function hasNextShort() can be used from the Scanner class.
-        b. Do verification of the number range of each input value. Input values need to be in range 0 to +10. */
-        byte[] myArray3 = new byte[10];
+
+        byte[] gradeArray = new byte [10];
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter grades from 0 to 10");
-        byte myArray3 = input.nextByte() {
-            int i  = 0;
-            while (i < 10) {
-                System.out.println("Enter your grade");
+
+        System.out.println("Enter 10 grades from 0 to 10");
+        for (int i = 0; i < gradeArray.length; i++) {
+            while (!input.hasNextByte()) {
+                System.out.println("Please enter valid number");
+                input.next();
+            }
+
+            byte grades = input.nextByte();
+
+            if (grades < 0 || grades > 10) {
+                System.out.println("Enter valid grades in the range from 0 tp 10");
+                i--;
+            } else
+                gradeArray[i] = grades;
+        }
+        System.out.println(Arrays.toString(gradeArray));
+
+        int fail = 0;
+        int best = 0;
+
+        for (int p : gradeArray) {
+            if (p < 4) {
+                fail++;
+            }
+            if (p == 10) {
+                best++;
             }
         }
-        if (myArray3 < 0 || myArray3 > 10) {
-            System.out.println("Enter valid grades in the range from 0 tp 10");
-        }
-       /* ● Do calculations how many students failed (the grade is smaller than 4).
-        ● Do calculations how many students got an “A”(the grade is 10).
-        ● Create a histogram of number frequencies in the grade array. */
+        System.out.println(best++ + " got A \n"  + fail++ +" failed");
 
+        int [] histogram = new int[11];
+        int counter;
+
+        for (int i = 0; i < gradeArray.length; i++) {
+            counter = 0;
+            for (int j = 0; j < gradeArray.length; j++) {
+                if (i == gradeArray[j]) {
+                    counter++;
+                }
+            }
+            histogram[i] = counter;
+        }
+        for(int i = 0; i < histogram.length; i++) {
+            System.out.println(histogram[i] + " students with the grade " + i);
+        }
 
     }
+
 }
