@@ -57,13 +57,6 @@ public class DataStructuresTask3 {
         otherProducts.put(0.89,"Dijon mustard");
         System.out.println();
 
-
-//        System.out.println(otherProducts.isEmpty());
-//        System.out.println(otherProducts.size());
-//        System.out.println(otherProducts.values());
-//        System.out.println(otherProducts.keySet());
-//        System.out.println(otherProducts.hashCode());
-
         products.putAll(otherProducts); //merge both
         System.out.println("Merged product list");
         for(Map.Entry list : products.entrySet()) {
@@ -82,3 +75,8 @@ public class DataStructuresTask3 {
     }
 
 }
+//        System.out.println(otherProducts.isEmpty());
+//        System.out.println(otherProducts.size());
+//        System.out.println(otherProducts.values());
+//        System.out.println(otherProducts.keySet());
+//        System.out.println(otherProducts.hashCode()); what does this do?
