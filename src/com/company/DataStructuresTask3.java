@@ -17,7 +17,7 @@ public class DataStructuresTask3 {
         HashMap<Double,String> products = new HashMap<>();
         products.put(3.09,"Peanut Butter");
         products.put(0.73,"Bananas");
-        products.put(0.99,"Hummus");
+        products.put(0.98,"Hummus");
         products.put(6.55,"Strawberries");
         products.put(2.99,"Salmon");
         products.put(5.39,"Sesame oil");
