@@ -5,9 +5,9 @@ public class stringsTask5 {
 //    static String test = "Was it a car or a cat I saw?";
 //    static String test = "Madam, in Eden, I'm Adam.";
 //    static String test = "Yo, banana boy!";
-    static String test = "Amor a Roma";
+//    static String test = "Amor a Roma";
 //    static String test = "A veces perderse no es una perdida de tiempo";
-//    static String test = "Kam lemts lidot, tas nerapos";
+    static String test = "Kam lemts lidot, tas nerapos";
 
 
     public static void main (String[] args) {
