@@ -27,11 +27,11 @@ public class DataStructuresTask3v2 {
         System.out.println();
 
         Map.Entry<String, Double> minPrice = Collections.min(products.entrySet(),
-                Comparator.comparing(Map.Entry::getValue)); //lowest price
+                Map.Entry.comparingByValue()); //lowest price
         System.out.println("Lowest price: " + minPrice + " eur");
 
         Map.Entry<String, Double> maxPrice = Collections.max(products.entrySet(),
-                Comparator.comparing(Map.Entry::getValue));//highest price
+                Map.Entry.comparingByValue());//highest price
         System.out.println("Highest price: " + maxPrice + " eur");
 
 //        System.out.println(Collections.min(products.values())); //lowest price
@@ -75,9 +75,31 @@ public class DataStructuresTask3v2 {
         List<Map.Entry<String, Double>> sorted = products.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.toList());
-
         System.out.println(sorted);
+        System.out.println();
 
+        System.out.println("Sorted in ascending order complicated way:");
+        Map<String, Double> sorted2 = sortByValue(products);
+        for (Map.Entry<String, Double> list : sorted2.entrySet()) {
+            System.out.println(list.getValue() + " " + list.getKey());
+        }
+
+    }
+
+    public static HashMap<String, Double> sortByValue(HashMap<String, Double> products) {
+
+        // Create a list from elements of HashMap
+        List<Map.Entry<String, Double>> listOfProducts = new LinkedList<>(products.entrySet());
+
+        // Sort the list
+        listOfProducts.sort(Map.Entry.comparingByValue());
+
+        // put data from sorted list to hashmap
+        HashMap<String, Double> sortedMap = new LinkedHashMap<>();
+        for (Map.Entry<String, Double> map : listOfProducts) {
+            sortedMap.put(map.getKey(), map.getValue());
+        }
+        return sortedMap;
     }
 
 }
